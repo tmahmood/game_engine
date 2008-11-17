@@ -1,0 +1,25 @@
+#ifndef STRING_TOKENIZER_H_
+
+#define STRING_TOKENIZER_H_
+#include "string_helper.h"
+
+class String_tokenizer
+{
+	public:
+		String_tokenizer ( );
+		virtual ~String_tokenizer();
+		int split(char*, char);
+		char *get(int);
+
+	private:
+		int token_count;
+		char *tokenized_str;
+		String_helper string_helper;
+		int *token_positions;
+
+};
+
+
+
+#endif /* SRC/STRING_TOKENIZER_H_ */
+
