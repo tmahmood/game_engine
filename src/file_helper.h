@@ -16,13 +16,11 @@ class File_helper
 		char *get_last_read_data();
 		long get_last_file_size();
 
+		void clean_up();
 	private:
-		bool open(char *);
-
 		long get_file_size(FILE *);
 
 		char *last_read_data;
-		char *file_name;
 		long file_size;
 		String_helper string_helper;
 };

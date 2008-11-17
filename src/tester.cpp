@@ -1,10 +1,12 @@
 #include "file_helper.h"
 #include "string_tokenizer.h"
+#include "map.h"
 
-void test_tokenizer(char *test)
+void test_tokenizer(char *test, char split_by=' ')
 {
 	String_tokenizer st;
-	int count = st.split(test, ' ');
+	int count = st.split(test, split_by);
+	printf("%s\n", test);
 	printf ("%d\n", count);
 
 	for( int i = 0; i < count; i++)
@@ -23,15 +25,27 @@ void test_file_helper()
 	char *data = fh.get_last_read_data();
 	long  size = fh.get_last_file_size();
 	printf ("%ld\n%s\n", size, data);
+	test_tokenizer(data, '@');
 	delete data;
+}
+
+void test_map()
+{
+	Map map;
+	map.load_map((char*)"test_file");
 }
 
 int main (int argc, char const* argv[])
 {
-	test_tokenizer((char*)"This is a test string");
-	test_tokenizer((char*)"Thisisateststring");
-	test_tokenizer((char*)"   This  is  at e stst ring");
-	test_tokenizer((char*)"");
+	//test_file_helper();
+	//test_tokenizer((char*)"This  is  a  test");
+	//test_tokenizer((char*)"This is a test");
+	//test_tokenizer((char*)"   This is a test");
+
+	//test_file_helper();
+	//
+	
+	test_map();
 	return 0;
 }
 

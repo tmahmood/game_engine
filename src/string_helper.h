@@ -11,7 +11,6 @@ class String_helper
 {
 	public:
 		bool copy_string(char *&dest, const char *src);
-		void split(char *string, char );
 };
 
 #endif /* SRC/STRING_HELPER_H_ */

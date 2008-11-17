@@ -6,37 +6,64 @@ String_tokenizer::String_tokenizer()
 {
 	token_count = 0;
 	tokenized_str = NULL;
+	token_positions = NULL;
 }
 
 String_tokenizer::~String_tokenizer()
+{
+	clean_up();
+}
+
+void String_tokenizer::clean_up()
 {
 	if (tokenized_str != NULL)
 	{
 		delete tokenized_str;
 	}
+
+	if(token_positions != NULL)
+	{
+		delete token_positions;
+	}
 }
 
 int String_tokenizer::split(char *string, char split_by=' ')
 {
+	clean_up();
 	string_helper.copy_string(tokenized_str, string);
-	token_positions = new int[strlen(string)];
+	int *tpos = new int[strlen(string)];
 
 	token_count = 0;
-	token_positions[0] = 0;
+	tpos[0] = 0;
 
 	int len = strlen(tokenized_str);
+	int last_found = -1;
 
 	for(int i = 0; i<=len; i++)	
 	{
-		if(tokenized_str[i]==split_by || 
-			tokenized_str[i]=='\0')
+		if(tokenized_str[i]==split_by || tokenized_str[i]=='\0')
 		{
 			tokenized_str[i]='\0';
+			if (last_found + 1 == i)
+			{
+				tpos[token_count] = i+1;
+				last_found = i;
+				continue;
+			}
+			
+			last_found = i;
 			token_count++;
-			token_positions[token_count] = i+1;
+			tpos[token_count] = i+1;
 		}
 	}
 
+	token_positions = new int[token_count];
+	for (int i=0;i<token_count; i++) 
+	{
+		token_positions[i] = tpos[i];
+	}
+	
+	delete tpos;
 	return token_count;	
 }
 

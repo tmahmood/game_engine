@@ -1,8 +1,5 @@
 #include "string_helper.h"
 
-#include<stdio.h>
-#include<string.h>
-
 bool String_helper::copy_string(char *&dest, const char *src)
 {
 	try

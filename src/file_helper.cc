@@ -9,14 +9,14 @@ File_helper::File_helper()
 
 File_helper::~File_helper()
 {
-	if (last_read_data !=NULL)
+	clean_up();
+}
+
+void File_helper::clean_up()
+{
+	if (last_read_data!=NULL)
 	{
 		delete last_read_data;
-	}
-
-	if(file_name == NULL)
-	{
-		delete file_name;
 	}
 }
 
@@ -40,9 +40,9 @@ long File_helper::get_file_size(FILE *fp)
 	return size;
 }
 
-bool File_helper::read_file(char *fname)
+bool File_helper::read_file(char *fname=NULL)
 {
-	string_helper.copy_string(file_name, fname);
+	clean_up();
 
 	FILE *fp = fopen(fname, "r");
 	if(fp == NULL)
