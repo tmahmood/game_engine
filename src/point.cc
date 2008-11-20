@@ -1,21 +1,3 @@
-/*
- * =====================================================================================
- *
- *       Filename:  point.cc
- *
- *    Description:  Main file for Point class
- *
- *        Version:  1.0
- *        Created:  11/17/2008 12:16:11 AM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Tarin Mahmood (tmn), mrlinux045@gmail.com
- *        Company:  tmnSoft
- *
- * =====================================================================================
- */
-
 #include	"point.h"
 
 void Point::set_position(int x, int y)
@@ -24,12 +6,12 @@ void Point::set_position(int x, int y)
 	this->y = y;
 }
 
-int Point::get_x_position()
+int Point::get_x()
 {
 	return x;
 }
 
-int Point::get_y_position()
+int Point::get_y()
 {
 	return y;
 }

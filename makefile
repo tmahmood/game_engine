@@ -1,8 +1,8 @@
 CC=g++
 CFLAGS=-c -Wall -g
 LDFLAGS=-g
-SOURCES=src/tester.cpp src/file_helper.cc src/string_helper.cc src/string_tokenizer.cc src/map.cc
-OBJECTS=$(SOURCES:.cpp=.o)
+SOURCES=src/tester.cpp src/file_helper.cc src/string_helper.cc src/string_tokenizer.cc src/map.cc src/point.cc
+OBJECTS=$(SOURCES:.cpp=.o) 
 EXECUTABLE=bin/game_engine
 
 all: $(SOURCES) $(EXECUTABLE)

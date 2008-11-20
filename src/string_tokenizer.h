@@ -11,6 +11,7 @@ class String_tokenizer
 		int split(char*, char);
 		char *get(int);
 		void clean_up();
+		int get_token_count();
 
 	private:
 		int token_count;

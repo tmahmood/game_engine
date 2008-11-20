@@ -41,7 +41,8 @@ int String_tokenizer::split(char *string, char split_by=' ')
 
 	for(int i = 0; i<=len; i++)	
 	{
-		if(tokenized_str[i]==split_by || tokenized_str[i]=='\0')
+		if(	tokenized_str[i]==split_by || 
+			tokenized_str[i]=='\0')
 		{
 			tokenized_str[i]='\0';
 			if (last_found + 1 == i)
@@ -67,8 +68,18 @@ int String_tokenizer::split(char *string, char split_by=' ')
 	return token_count;	
 }
 
+int String_tokenizer::get_token_count()
+{
+	return token_count;
+}
+
 char *String_tokenizer::get(int token_no)
 {
+	// TODO: Add Invalide Index exception
+	if(token_no>token_count) 
+	{
+		return NULL;
+	}
 	char *ret_value ;
 	char *target = &tokenized_str[token_positions[token_no]];
 	string_helper.copy_string(ret_value, target);

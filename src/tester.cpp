@@ -33,18 +33,20 @@ void test_map()
 {
 	Map map;
 	map.load_map((char*)"test_file");
+	map.display_map_info();
+}
+
+void test_tokenizer_w_data()
+{
+	test_tokenizer((char*)"This  is  a  test");
+	test_tokenizer((char*)"This is a test");
+	test_tokenizer((char*)"   This is a test");
 }
 
 int main (int argc, char const* argv[])
 {
+	//test_tokenizer_w_data();
 	//test_file_helper();
-	//test_tokenizer((char*)"This  is  a  test");
-	//test_tokenizer((char*)"This is a test");
-	//test_tokenizer((char*)"   This is a test");
-
-	//test_file_helper();
-	//
-	
 	test_map();
 	return 0;
 }

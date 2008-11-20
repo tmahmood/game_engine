@@ -5,6 +5,7 @@
 #include "string_helper.h"
 #include "file_helper.h"
 #include "string_tokenizer.h"
+#include "point.h"
 
 class Map
 {
@@ -12,6 +13,7 @@ class Map
 		Map ();
 		bool load_map(char *map_file);
 		void clean_up();
+		void display_map_info();
 		~Map();
 
 	private:
@@ -19,12 +21,15 @@ class Map
 		String_helper string_helper;
 
 		char *map;
-		char *map_data;
 
 		char *map_title;
+
+		int map_width;
+		int map_height;
+
+		Point start_point;
+		Point end_point;
 };
-
-
 
 #endif /* MAP_H_ */
 
