@@ -14,6 +14,7 @@ class Map
 		bool load_map(char *map_file);
 		void clean_up();
 		void display_map_info();
+		bool is_valid_position(Point);
 		~Map();
 
 	private:

@@ -17,6 +17,11 @@ void Map::clean_up()
 	{
 		delete map_title;
 	}
+
+	if (map != NULL) 
+	{
+		delete map;
+	}
 }
 
 bool Map::load_map(char *map_file)
@@ -40,43 +45,40 @@ bool Map::load_map(char *map_file)
 	map_info = stokenizer.get(0);
 
 	char *map_size;
-	char *map_start_pos;
-	char *map_end_pos;
 
 	stokenizer.split(map_info, '\n');
 	
 	map_title = stokenizer.get(0);
 	map_size = stokenizer.get(1);
-	map_start_pos = stokenizer.get(2);
-	map_end_pos = stokenizer.get(3);
-
-	int x, y;
-
-	sscanf(map_start_pos, "%d %d", &x, &y);
-	start_point.set_position(x, y);
-
-	sscanf(map_end_pos, "%d %d", &x, &y);
-	end_point.set_position(x, y);
 
 	sscanf(map_size, "%d %d", &map_width, &map_height);
 	
 	delete map_info;
 	delete map_data;
 	delete map_size;
-	delete map_start_pos;
-	delete map_end_pos;
+}
 
+bool Map::is_valid_position(Point p)
+{
+	int x = p.get_x();
+	int y = p.get_y();
+
+	if(x>map_width || x <0) 
+	{
+		return false;
+	}
+
+	if(y>map_height || y<0) 
+	{
+		return false;
+	}
+
+	return true;
 }
 
 void Map::display_map_info()
 {
 	printf("map size : %d %d\n", map_width, map_height);
-
-	printf("starts at: %d %d\n",  	start_point.get_x(), 
-					start_point.get_y());
-
-	printf("ends at  : %d %d\n",	end_point.get_x(), 
-					end_point.get_y());
-
-	printf("map      :\n%s\n", map);
+	map[map_width * 2 + 5] = 'W';
+	printf("map      :\n[%s]\n", map);
 }
