@@ -31,8 +31,8 @@ bool Map::load_map(char *map_file)
 	String_tokenizer stokenizer;
 	char *map_info;
 	char *map_data;
+	char *map_size;
 	
-
 	if (!file_helper.read_file(map_file))
 	{
 		return false;
@@ -44,7 +44,9 @@ bool Map::load_map(char *map_file)
 	map = stokenizer.get(1);
 	map_info = stokenizer.get(0);
 
-	char *map_size;
+	string_helper.trim(map_info , '\n');
+	string_helper.trim(map , '\n');
+
 
 	stokenizer.split(map_info, '\n');
 	
@@ -56,6 +58,7 @@ bool Map::load_map(char *map_file)
 	delete map_info;
 	delete map_data;
 	delete map_size;
+	return true;
 }
 
 bool Map::is_valid_position(Point p)

@@ -21,7 +21,7 @@ class File_helper
 		long get_file_size(FILE *);
 
 		char *last_read_data;
-		long file_size;
+		size_t file_size;
 		String_helper string_helper;
 };
 #endif /* SRC/FILE_HELPER_H_ */

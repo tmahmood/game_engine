@@ -1,5 +1,6 @@
 #include "file_helper.h"
 #include "string_tokenizer.h"
+#include "string_helper.h"
 #include "map.h"
 
 void test_tokenizer(char *test, char split_by=' ')
@@ -43,11 +44,40 @@ void test_tokenizer_w_data()
 	test_tokenizer((char*)"   This is a test");
 }
 
+void test_string_trimmer()
+{
+	String_helper st;
+	char test[] = "   this is a test string!     ";
+	char *res;
+
+	st.copy_string(res, test);
+
+	st.trim_left(res ,' ');
+	printf("[%s]\n", test);
+	printf("[%s]\n", res);
+
+	st.copy_string(res, test);
+
+	st.trim_right(res ,' ');
+	printf("[%s]\n", test);
+	printf("[%s]\n", res);
+
+
+	st.copy_string(res, test);
+	printf("[%s]\n", test);
+	st.trim(res, ' ');
+	printf("[%s]\n", res);
+	delete res;
+
+}
+
 int main (int argc, char const* argv[])
 {
 	//test_tokenizer_w_data();
 	//test_file_helper();
 	test_map();
+	
+	test_string_trimmer();
 	return 0;
 }
 

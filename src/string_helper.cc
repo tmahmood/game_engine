@@ -4,7 +4,8 @@ bool String_helper::copy_string(char *&dest, const char *src)
 {
 	try
 	{
-		dest = new char[strlen(src) * sizeof(char)];
+		int len = strlen(src);
+		dest = new char[len];
 		strcpy(dest, src);
 		return true;
 	}
@@ -18,33 +19,46 @@ bool String_helper::copy_string(char *&dest, const char *src)
 	}
 }
 
-char* String_helper::trim(char *src, char trim_char)
+char *String_helper::search(char *src, char search_key,
+				 char direction = 'f')
 {
-	char *result, *orig_str;
-
-	if(!copy_string(result, src))
+	if(direction == 'f')
 	{
-		return NULL;
+		return strchr(src, search_key);
 	}
-
-
-	int i, j ,k;
-	int len = strlen(trim_char);
-
-	bool found_match_start = true;
-	bool found_match_end;
-
-	while(found_match_start) 
+	else 
 	{
-		int f_char = strchr(src, trim_char[i]);
-		if (f_char == 0) 
-		{
-			src[0] = '\0';
-			
-		}
+		return strrchr(src, search_key);
 	}
 }
 
-void String_helper::trim(char *&src, char *trim_char)
+void String_helper::trim_right(char *string, char trim_char)
 {
+	int i = strlen(string)-1;
+
+	while( string[i] == trim_char)
+	{
+		i--;
+	}
+	string[i] = '\0';
+}
+
+void String_helper::trim_left(char *src, char trim_char)
+{
+	char *result = src;
+	char *orig_str;
+	
+	orig_str = &result[0];
+
+	while(result[0] == trim_char) 
+	{
+		result = &result[1];
+	}
+	strcpy(src, result);
+}
+
+void String_helper::trim(char *src, char trim_char)
+{
+	trim_right(src, trim_char);
+	trim_left(src, trim_char);
 }

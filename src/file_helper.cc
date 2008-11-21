@@ -46,15 +46,32 @@ bool File_helper::read_file(char *fname=NULL)
 
 	FILE *fp = fopen(fname, "r");
 	if(fp == NULL)
+	{
 		return false;
+	}
 
 	file_size = get_file_size(fp);
+
+	try 
+	{
+		if (last_read_data != NULL) 
+		{
+			delete last_read_data;
+		}
+	}
+	catch (...)
+	{
+		printf("NEED FIX: PROBLEM HERE\n");
+		last_read_data = NULL;
+	}
 
 	last_read_data = new char[file_size * sizeof(char)];
 	size_t result = fread (last_read_data, 1, file_size, fp);
 
 	if(result != file_size)
+	{
 		return false;
+	}
 
 	fclose(fp);
 	return true;
@@ -62,7 +79,11 @@ bool File_helper::read_file(char *fname=NULL)
 
 char *File_helper::get_last_read_data()
 {
-	char *rvalue;
+	if(last_read_data == NULL)
+	{
+		return NULL;
+	}
+	char *rvalue = NULL;
 	if(!string_helper.copy_string(rvalue, last_read_data))
 	{
 		throw (STRING_COPY_EXCEPTION);
