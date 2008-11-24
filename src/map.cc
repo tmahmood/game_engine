@@ -81,6 +81,7 @@ bool Map::is_valid_position(Point p)
 
 void Map::display_map_info()
 {
+	printf("map title : %s\n", map_title);
 	printf("map size : %d %d\n", map_width, map_height);
 	map[map_width * 2 + 5] = 'W';
 	printf("map      :\n[%s]\n", map);

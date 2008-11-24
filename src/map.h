@@ -2,9 +2,9 @@
 
 #define MAP_H_
 
-#include "string_helper.h"
-#include "file_helper.h"
-#include "string_tokenizer.h"
+#include "helpers/string_helper.h"
+#include "helpers/file_helper.h"
+#include "helpers/string_tokenizer.h"
 #include "point.h"
 
 class Map

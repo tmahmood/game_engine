@@ -40,7 +40,7 @@ void String_helper::trim_right(char *string, char trim_char)
 	{
 		i--;
 	}
-	string[i] = '\0';
+	string[i+1] = '\0';
 }
 
 void String_helper::trim_left(char *src, char trim_char)
