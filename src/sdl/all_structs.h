@@ -11,10 +11,4 @@ enum Directions
 	UP, 
 	DOWN 
 };
-/////////////
-struct Point
-{
-	int x;
-	int y;
-};
 

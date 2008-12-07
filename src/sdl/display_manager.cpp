@@ -2,16 +2,16 @@
 #include"all_structs.h"
 #include"display_manager.h"
 
-DisplayManager::DisplayManager ()
+Display_manager::Display_manager ()
 {
 	// default configuration
 	scr_width	= 300;
 	scr_height	= 300;
-	wbit 		= 16;
+	wbit 		= 24;
 	wflag 		= SDL_HWSURFACE|SDL_DOUBLEBUF;
 }
 
-DisplayManager::DisplayManager (int sw, int sh, int bit, int flag)
+Display_manager::Display_manager (int sw, int sh, int bit, int flag)
 {
 	// default configuration
 	scr_width	= sw;
@@ -20,17 +20,20 @@ DisplayManager::DisplayManager (int sw, int sh, int bit, int flag)
 	wflag 		= flag;
 }
 
-SDL_PixelFormat *DisplayManager::get_display_format ()
+SDL_PixelFormat *Display_manager::get_display_format ()
 {
 	return Display->format;	
 }
 
-long DisplayManager::get_ticks ()
+long Display_manager::get_ticks ()
 {
 	return SDL_GetTicks();
 }
 
-bool DisplayManager::init_display_manager (int sw, int sh, int bit, int flag, char *window_title)
+bool Display_manager::init_display_manager ( 	int sw, int sh, 
+						int bit, int flag,
+						char *window_title
+					)
 {
 	scr_width	= sw;
 	scr_height	= sh;
@@ -49,7 +52,8 @@ bool DisplayManager::init_display_manager (int sw, int sh, int bit, int flag, ch
 
 	Display = SDL_SetVideoMode(scr_width, scr_height, wbit, wflag);
 
-	printf ("[i] Video Mode set to %dx%d with %d bit color\n", scr_width, scr_height, wbit);
+	printf ("[i] Video Mode set to %dx%d with %d bit color\n", 
+			scr_width, scr_height, wbit);
 
 
 	if (!Display)
@@ -64,7 +68,7 @@ bool DisplayManager::init_display_manager (int sw, int sh, int bit, int flag, ch
 	return true;
 }
 
-Uint8 DisplayManager::get_pixel (int x, int y)
+Uint8 Display_manager::get_pixel (int x, int y)
 {	
 	int bpp = Display->format->BytesPerPixel;
 	/* Here p is the address to the pixel we want to retrieve */
@@ -92,7 +96,7 @@ Uint8 DisplayManager::get_pixel (int x, int y)
 }
 
 
-void DisplayManager::put_pixel(int x, int y, Uint32 pixel)
+void Display_manager::put_pixel(int x, int y, Uint32 pixel)
 {
 	int bpp = Display->format->BytesPerPixel;
 	/* Here p is the address to the pixel we want to set */
@@ -109,11 +113,14 @@ void DisplayManager::put_pixel(int x, int y, Uint32 pixel)
 			break;
 
 		case 3:
-			if(SDL_BYTEORDER == SDL_BIG_ENDIAN) {
+			if(SDL_BYTEORDER == SDL_BIG_ENDIAN) 
+			{
 				p[0] = (pixel >> 16) & 0xff;
 				p[1] = (pixel >> 8) & 0xff;
 				p[2] = pixel & 0xff;
-			} else {
+			} 
+			else 
+			{
 				p[0] = pixel & 0xff;
 				p[1] = (pixel >> 8) & 0xff;
 				p[2] = (pixel >> 16) & 0xff;
@@ -126,7 +133,7 @@ void DisplayManager::put_pixel(int x, int y, Uint32 pixel)
 	}
 }
 
-bool DisplayManager::draw_image(SDL_Surface *image, int x, int y)
+bool Display_manager::draw_image(SDL_Surface *image, int x, int y)
 {
 	SDL_Rect DestR, SrcR;
 	if (!image) 
@@ -149,7 +156,7 @@ bool DisplayManager::draw_image(SDL_Surface *image, int x, int y)
 
 }
 
-bool DisplayManager::draw_image (SDL_Surface *image, Point Src, Point Dest, Point size)
+bool Display_manager::draw_image (SDL_Surface *image, Point Src, Point Dest, Point size)
 {
 	SDL_Rect DestR, SrcR;
 	if (!image) 
@@ -171,22 +178,22 @@ bool DisplayManager::draw_image (SDL_Surface *image, Point Src, Point Dest, Poin
 	return true;
 }
 
-void DisplayManager::redraw ()
+void Display_manager::redraw ()
 {
 	SDL_Flip(Display);
 }
 
-void DisplayManager::fill_surface (Uint32 colorkey)
+void Display_manager::fill_surface (Uint32 colorkey)
 {
 	SDL_FillRect(Display, NULL, colorkey);
 }
 
-void DisplayManager::fill_rect (Uint32 colorkey, SDL_Rect *rect)
+void Display_manager::fill_rect (Uint32 colorkey, SDL_Rect *rect)
 {
 	SDL_FillRect(Display, rect, colorkey);
 }
 
-void DisplayManager::close_display_manager()
+void Display_manager::close_display_manager()
 {
 	printf ("[i] Shuting down SDL ...\n");
 
@@ -200,7 +207,7 @@ void DisplayManager::close_display_manager()
 
 }
 
-DisplayManager::~DisplayManager()
+Display_manager::~Display_manager()
 {
 	close_display_manager();
 }

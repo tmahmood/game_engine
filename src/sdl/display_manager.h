@@ -6,7 +6,7 @@
  * This is the main surface where we will draw all the stuffs
  * There should be one and only one Display manager, 
  * */
-class DisplayManager
+class Display_manager
 {
 	private:
 		SDL_Surface *Display;
@@ -17,9 +17,9 @@ class DisplayManager
 		Uint32 background_color;
 			
 	public:
-		DisplayManager();
-		DisplayManager(int,int,int,int);
-		~DisplayManager();
+		Display_manager();
+		Display_manager(int,int,int,int);
+		~Display_manager();
 		////////////////////////////////////
 		bool init_display_manager(int, int, int, int, char *);
 		void close_display_manager();
