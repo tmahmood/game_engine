@@ -24,7 +24,9 @@ long File_helper::get_file_size(char *fname)
 {
 	FILE *fp = fopen(fname, "r");
 	if(!fp)
+	{
 		return -1;
+	}
 
 	fseek (fp , 0 , SEEK_END);
 	long size = ftell (fp);

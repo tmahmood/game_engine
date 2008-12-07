@@ -62,7 +62,6 @@ void test_string_trimmer()
 	printf("[%s]\n", test);
 	printf("[%s]\n", res);
 
-
 	st.copy_string(res, test);
 	printf("[%s]\n", test);
 	st.trim(res, ' ');
@@ -75,9 +74,9 @@ int main (int argc, char const* argv[])
 {
 	//test_tokenizer_w_data();
 	//test_file_helper();
-	test_map();
+	//test_map();
+	//test_string_trimmer();
 	
-	test_string_trimmer();
 	return 0;
 }
 
