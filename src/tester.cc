@@ -1,7 +1,19 @@
 #include "helpers/file_helper.h"
 #include "helpers/string_tokenizer.h"
 #include "helpers/string_helper.h"
+#include "sdl/sdl_dm.h"
 #include "map.h"
+
+
+int test_SDL()
+{
+	SDL_DM sdm;
+	sdm.set_screen_size(640, 480);
+	sdm.init_dm();
+	char x;
+	scanf("%c", &x);
+	return 0;
+}
 
 void test_tokenizer(char *test, char split_by=' ')
 {
@@ -76,6 +88,7 @@ int main (int argc, char const* argv[])
 	//test_file_helper();
 	//test_map();
 	//test_string_trimmer();
+	test_SDL();
 	
 	return 0;
 }

@@ -63,8 +63,8 @@ bool Map::load_map(char *map_file)
 
 bool Map::is_valid_position(Point p)
 {
-	int x = p.get_x();
-	int y = p.get_y();
+	int x = p.x;
+	int y = p.y;
 
 	if(x>map_width || x <0) 
 	{
