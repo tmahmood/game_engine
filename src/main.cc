@@ -1,6 +1,6 @@
 #include	<stdio.h>
 #include	<stdlib.h>
-#include	"mem_management/llist.h"
+#include	"mem_manager/llist.h"
 #include	"sdl/sdl_dm.h"
 
 #define	DISPLAY_INIT_FAILED 100
