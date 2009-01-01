@@ -3,7 +3,7 @@ CFLAGS=-c -Wall -g
 LDFLAGS=-g -Wall
 SDLFLAG=-lSDL
 
-SOURCES=src/tester.cc src/helpers/file_helper.cc src/helpers/string_helper.cc src/helpers/string_tokenizer.cc src/map.cc src/sdl/sdl_dm.cc
+SOURCES=src/main.cc src/tester.cc src/helpers/file_helper.cc src/helpers/string_helper.cc src/helpers/string_tokenizer.cc src/map.cc src/sdl/sdl_dm.cc
 
 OBJECTS=$(SOURCES:.cc=.o)
 

@@ -10,10 +10,6 @@
 #define unload_image SDL_FreeSurface
 #define Rectangle SDL_Rect
 
-/*
- * This is the main surface where we will draw all the stuffs
- * There should be one and only one Display manager, 
- * */
 class SDL_DM
 {
 	private:
@@ -23,10 +19,13 @@ class SDL_DM
 		int wbit;
 		int wflag;
 		Uint32 background_color;
+		bool initialized;
 
 	public:
 		SDL_DM();
 		~SDL_DM();
+
+		bool is_initialized();
 
 		void set_screen_size(int, int);
 		void set_display_flags(int);
@@ -35,7 +34,6 @@ class SDL_DM
 		bool init_dm();
 		void close_display_manager();
 		void redraw();
-
 
 		bool copy_img_to(SDL_Surface*, Rectangle, Point);
 		bool draw_image(SDL_Surface*, int, int);

@@ -82,7 +82,7 @@ void test_string_trimmer()
 
 }
 
-int main (int argc, char const* argv[])
+int start_test (int argc, char const* argv[])
 {
 	//test_tokenizer_w_data();
 	//test_file_helper();

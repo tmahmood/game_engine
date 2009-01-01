@@ -9,17 +9,30 @@ SDL_DM::SDL_DM ()
 	scr_height	= 300;
 	wbit 		= 24;
 	wflag 		= SDL_HWSURFACE|SDL_DOUBLEBUF;
+	initialized 		= false;
 }
 
-
-SDL_PixelFormat* SDL_DM::get_display_format () 
+SDL_DM::~SDL_DM()
 {
-	return Display->format;	
+	close_display_manager();
 }
 
-long SDL_DM::get_ticks () 
+void SDL_DM::close_display_manager()
 {
-	return SDL_GetTicks();
+	if(initialized)
+	{
+		if(Display!=NULL)
+		{
+			SDL_FreeSurface(Display);	
+		}
+		SDL_Quit();
+		initialized = false;
+	}
+}
+
+bool SDL_DM::is_initialized()
+{
+	return initialized;
 }
 
 void SDL_DM::set_screen_size(int sw, int sh)
@@ -47,17 +60,27 @@ bool SDL_DM::init_dm ()
 		return false;
 	}
 
-	Display = SDL_SetVideoMode( 	scr_width,
-					scr_height, 
-					wbit, wflag);
+	Display = SDL_SetVideoMode(scr_width, scr_height, wbit, wflag);
 
 	if (!Display)
 	{
 		return false;
 	}
 
+	initialized = true;
+
 	SDL_WM_SetCaption("A SDL Window","Icon");
 	return true;
+}
+
+SDL_PixelFormat* SDL_DM::get_display_format () 
+{
+	return Display->format;	
+}
+
+long SDL_DM::get_ticks () 
+{
+	return SDL_GetTicks();
 }
 
 Uint8 SDL_DM::get_pixel (int x, int y)
@@ -98,9 +121,7 @@ Uint8 SDL_DM::get_pixel (int x, int y)
 void SDL_DM::put_pixel(int x, int y, Uint32 pixel)
 {
 	int bpp = Display->format->BytesPerPixel;
-	Uint8 *p = (Uint8 *)Display->pixels 
-			+ y * Display->pitch 
-			+ x * bpp;
+	Uint8 *p = (Uint8 *)Display->pixels + y * Display->pitch + x * bpp;
 
 	switch(bpp) 
 	{
@@ -156,10 +177,7 @@ bool SDL_DM::draw_image(SDL_Surface *image, int x, int y)
 
 }
 
-bool SDL_DM::copy_img_to(
-			SDL_Surface *image, 
-			Rectangle src, 
-			Point destp)
+bool SDL_DM::copy_img_to( SDL_Surface *image, Rectangle src, Point destp)
 {
 	if (!image) 
 	{		
@@ -191,17 +209,4 @@ void SDL_DM::fill_rect (Uint32 colorkey, SDL_Rect *rect)
 	SDL_FillRect(Display, rect, colorkey);
 }
 
-void SDL_DM::close_display_manager()
-{
-	if(Display)
-	{
-		SDL_FreeSurface(Display);	
-	}
-	SDL_Quit();	
-}
-
-SDL_DM::~SDL_DM()
-{
-	close_display_manager();
-}
 
