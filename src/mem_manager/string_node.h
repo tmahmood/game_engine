@@ -42,17 +42,12 @@ class String_node
 
 	~String_node()
 	{
-		printf("Goodbye %s\n", data);
 		delete data;
 	}
 
 	bool equals(char *d)
 	{
-		if(!strcmp(d, data))
-		{
-			return true;
-		}
-		return false;			
+		return strcmp(d, data) == 0
 	}
 };
 

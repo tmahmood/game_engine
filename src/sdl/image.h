@@ -17,28 +17,40 @@
  */
 
 
-#include	"../mem_management/llist.h"
+#include<SDL/SDL_image.h>
+#include	"../mem_manager/llist.h"
 
 class Image_node
 {
-	SDL_Surface *data
+	SDL_Surface *data;
 	public:
 		Image_node *next;
 		Image_node *prev;
 		int index;
 
-		void set_data(char *d)
+		void set_data(SDL_Surface *d)
 		{
-			data = IMG_Load(d);
+			data = d;
 		}	
 
-		T get_data()
+		SDL_Surface* get_data()
 		{
 			return data;
 		}
-		~node()
+
+		~Image_node()
 		{
-			printf("Deleting!");
+			if(data!=NULL)
+			{
+				printf("Deleting Image %d:    ", index);
+				delete data;				
+				printf("DONE\n");
+			}
+		}
+
+		bool equals(SDL_Surface* tdata)
+		{
+			return tdata == data;
 		}
 
 };

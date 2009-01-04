@@ -1,3 +1,7 @@
+#ifndef LLIST_H_
+
+#define LLIST_H_
+
 #include<stdio.h>
 #include<exception>
 
@@ -247,3 +251,5 @@ class LinkedList
 
 };
 
+
+#endif /* SRC/MEM_MANAGER/LLIST_H_ */

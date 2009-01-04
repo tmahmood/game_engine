@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-c -Wall -g
 LDFLAGS=-g -Wall
-SDLFLAG=-lSDL
+SDLFLAG=`sdl-config --cflags --libs` -lSDL_image
 EXECUTABLE=bin/game_engine
 
 game_engine: main string_helper string_tokenizer file_helper sdl

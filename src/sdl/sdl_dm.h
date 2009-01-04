@@ -36,7 +36,7 @@ class SDL_DM
 		void redraw();
 
 		bool copy_img_to(SDL_Surface*, Rectangle, Point);
-		bool draw_image(SDL_Surface*, int, int);
+		bool draw_image(SDL_Surface *image, int x=0, int y=0);
 		void fill_rect(Uint32, SDL_Rect*);
 		void fill_surface(Uint32);
 
