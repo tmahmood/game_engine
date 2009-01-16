@@ -1,24 +1,17 @@
 #include	<stdio.h>
 #include	<stdlib.h>
+#include	<SDL/SDL_image.h>
+
+#include 	"resources.h"
 
 #include	"mem_manager/llist.h"
 #include	"sdl/sdl_dm.h"
 #include	"sdl/image.h"
 
-#include	<SDL/SDL_image.h>
-
-#define	DISPLAY_INIT_FAILED 100
-#define	ALL_GOOD 0
-
-#define BKGROUND_IMAGE 1001
-#define ROCKET_IMAGE 1002
-#define MISSILE_IMAGE 1003
-#define PLANET_1 1005
-#define PLANET_2 1006
-#define PLANET_3 1007
-#define PLANET_4 1008
 
 
+
+int status;
 SDL_DM sdm;
 int system_status = ALL_GOOD;
 
@@ -26,6 +19,13 @@ void init_system();
 bool start_sdl();
 void cleanup();
 void draw_test_image();
+void on_key_down();
+void sdl_event();
+
+void move_up();
+void move_down();
+void move_left();
+void move_right();
 
 LinkedList<SDL_Surface*, Image_node>image_list;
 
@@ -34,6 +34,7 @@ int main ( int argc, char *argv[] )
 	init_system();
 	return EXIT_SUCCESS;
 }
+
 
 void init_system()
 {	
@@ -58,23 +59,8 @@ bool start_sdl()
 
 void draw_test_image()
 {
-	image_list.add(IMG_Load("background.png"), BKGROUND_IMAGE);
-	image_list.add(IMG_Load("rocket.png"), ROCKET_IMAGE);
 	image_list.add(IMG_Load("missile.png"), MISSILE_IMAGE);
-
-	image_list.add(IMG_Load("31.png"), PLANET_1);
-	image_list.add(IMG_Load("32.png"), PLANET_2);
-	image_list.add(IMG_Load("33.png"), PLANET_3);
-	image_list.add(IMG_Load("34.png"), PLANET_4);
-
-	sdm.draw_image(image_list.get(BKGROUND_IMAGE));
-	sdm.draw_image(image_list.get(ROCKET_IMAGE), 128,128);
 	sdm.draw_image(image_list.get(MISSILE_IMAGE), 438,128);
-
-	sdm.draw_image(image_list.get(PLANET_1), 23, 32);
-	sdm.draw_image(image_list.get(PLANET_2), 560,560);
-	sdm.draw_image(image_list.get(PLANET_3), 600,100);
-
 	sdm.redraw();
 }
 
@@ -83,4 +69,60 @@ void cleanup()
 	sdm.close_display_manager();
 }
 
+void sdl_event()
+{
+	SDL_Event Event;
+
+	while (SDL_PollEvent(&Event))
+	{
+		switch (Event.type)
+		{
+			case SDL_QUIT:
+				status = S_EXIT;
+				break;
+
+			case SDL_KEYDOWN: //A key has been pressed
+				int Sym = Event.key.keysym.sym;
+				switch (Sym)
+				{
+					case SDLK_ESCAPE:
+						status = S_EXIT;
+						break;
+
+					case SDLK_LEFT:
+						move_left();
+						break;
+
+					case SDLK_RIGHT:
+						move_right();
+						break;
+
+					case SDLK_UP:
+						move_up();
+						break;
+
+					case SDLK_DOWN:
+						move_down();
+						break;
+				}
+				break;
+		}
+	}
+}
+
+void move_up()
+{
+}
+
+void move_down()
+{
+}
+
+void move_left()
+{
+}
+
+void move_right()
+{
+}
 
