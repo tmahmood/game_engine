@@ -3,12 +3,10 @@
 class Vehical : public Object
 {
 	private:
-		int accel;
 		int top_speed;
 
 	public:
-		void move(Direction)
-		int get_accelaration();
+		void set_top_speed(int);
+		void move(Direction);
 		int get_top_speed();
-		
 };

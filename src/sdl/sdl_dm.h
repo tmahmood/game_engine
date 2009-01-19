@@ -44,6 +44,7 @@ class SDL_DM
 		void put_pixel(int , int , Uint32 );
 		Uint8 get_pixel(int , int ); 
 		SDL_PixelFormat *get_display_format ();
+		Uint32 get_colorkey(int , int , int );
 };
 
 #endif /* SDL_DM_H_ */

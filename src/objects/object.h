@@ -7,11 +7,13 @@ class Object
 {
 	public:
 
-	void set_life(int);
-	void set_size(int,int);
-	void set_damage(int);
-	void set_level(int);
-	void set_obj_id(int);
+	virtual void set_life(int);
+	virtual void set_size(int,int);
+	virtual void set_damage(int);
+	virtual void set_level(int);
+	virtual void set_obj_id(int);
+	virtual void set_position(int, int);
+	virtual void set_speed(int);
 
 	int get_life();
 	int get_width();
@@ -21,6 +23,7 @@ class Object
 	int get_obj_id();
 	int get_pos_x();
 	int get_pos_y();
+	int get_current_speed();
 
 	virtual void move(Direction);
 

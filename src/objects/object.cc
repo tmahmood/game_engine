@@ -7,28 +7,44 @@ void Object::move(Direction dir)
 	move_int(dir);		
 }
 
+void Object::set_position(int x, int y)
+{
+	pos_x = x;
+	pos_y = y;
+}
+
+void Object::set_speed(int spd)
+{
+	speed = spd;
+}
+
+int Object::get_current_speed()
+{
+	return speed;
+}
+
 void Object::move_int(Direction dir)
 {
 	switch(dir)
 	{
 		case Left:
-			printf("Left\n");
+			printf("Left %d\n", speed);
 			pos_x-=speed;
 			break;
 
 		case Right:
-			printf("Right\n");
+			printf("Right %d\n", speed);
 			pos_x+=speed;
 			break;
 
 		case Up:
-			printf("Top\n");
-			pos_y+=speed;
+			printf("Top %d\n", speed);
+			pos_y-=speed;
 			break;
 
 		case Down:
-			printf("Down\n");
-			pos_y-=speed;
+			printf("Down %d\n", speed);
+			pos_y+=speed;
 			break;
 	}
 }

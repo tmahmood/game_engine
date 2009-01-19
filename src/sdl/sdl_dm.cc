@@ -209,4 +209,7 @@ void SDL_DM::fill_rect (Uint32 colorkey, SDL_Rect *rect)
 	SDL_FillRect(Display, rect, colorkey);
 }
 
-
+Uint32 SDL_DM::get_colorkey(int r, int g, int b)
+{
+	return SDL_MapRGB(get_display_format(), r, g , b); 
+}
