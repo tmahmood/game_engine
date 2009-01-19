@@ -4,8 +4,8 @@ LDFLAGS=-g -Wall
 SDLFLAG=`sdl-config --cflags --libs` -lSDL_image
 EXECUTABLE=bin/game_engine
 
-game_engine: main string_helper string_tokenizer file_helper sdl object vehical
-	g++ obj/main.o obj/string_helper.o obj/string_tokenizer.o obj/file_helper.o obj/sdl_dm.o obj/object.o obj/vehical.o $(SDLFLAG) $(LDFLAGS) -o$(EXECUTABLE)
+game_engine: main string_helper string_tokenizer file_helper sdl object vehical timer
+	g++ obj/main.o obj/string_helper.o obj/string_tokenizer.o obj/file_helper.o obj/sdl_dm.o obj/object.o obj/vehical.o obj/timer.o  $(SDLFLAG) $(LDFLAGS) -o$(EXECUTABLE)
 
 main:
 	g++ $(CFLAGS) -c src/main.cc -oobj/main.o
@@ -28,6 +28,8 @@ vehical:
 object:
 	g++ $(CFLAGS) $(SDLFLAG) -c src/objects/object.cc -o obj/object.o
 
+timer:
+	g++ $(CFLAGS) $(SDLFLAG) -c src/sdl/timer.cc -o obj/timer.o
 
 clean:
 	rm obj/*.o
