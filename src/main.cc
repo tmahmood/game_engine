@@ -8,6 +8,9 @@
 #include	"sdl/sdl_dm.h"
 #include	"sdl/image.h"
 #include	"objects/vehical.h"
+#include	"mem_manager/string_node.h"
+#include	"helpers/file_helper.h"
+#include 	"helpers/string_tokenizer.h"
 
 SDL_DM sdm;
 
@@ -29,8 +32,10 @@ void move_down();
 void move_left();
 void move_right();
 void clear_screen();
+void set_human();
 
 LinkedList<SDL_Surface*, Image_node>image_list;
+LinkedList<char*, String_node>string_list;
 Vehical vc;
 
 int main ( int argc, char *argv[] )
@@ -40,6 +45,11 @@ int main ( int argc, char *argv[] )
 	return EXIT_SUCCESS;
 }
 
+void set_human()
+{
+
+}
+
 void init_system()
 {	
 	if(!start_sdl())
@@ -47,8 +57,18 @@ void init_system()
 		exit(DISPLAY_INIT_FAILED);
 	}
 	atexit(cleanup);
-	
 	clear_screen();
+
+	File_helper fh;
+
+	fh.read_file((char*)"obj_human.txt");
+	string_list.add(fh.get_last_read_data(),100);
+
+	String_tokenizer stk;
+	stk.split(string_list.get(100), '\n');
+
+
+
 	image_list.add(IMG_Load("missile.png"), MISSILE_IMAGE);
 
 	vc.set_obj_id(MISSILE_IMAGE);

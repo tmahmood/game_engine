@@ -1,0 +1,9 @@
+id=1001
+life=100
+damage=10
+level=0
+stat_x=100
+speed=2
+top_speed=20
+movement=keyboard
+

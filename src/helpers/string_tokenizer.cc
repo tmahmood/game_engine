@@ -75,7 +75,7 @@ int String_tokenizer::get_token_count()
 
 char *String_tokenizer::get(int token_no)
 {
-	// TODO: Add Invalide Index exception
+	// TODO: Add Invalid Index exception
 	if(token_no>token_count) 
 	{
 		return NULL;
@@ -84,5 +84,14 @@ char *String_tokenizer::get(int token_no)
 	char *target = &tokenized_str[token_positions[token_no]];
 	string_helper.copy_string(ret_value, target);
 	return ret_value;
+}
+
+char *String_tokenizer::get_token(int token_no)
+{
+	if(token_no > token_count)
+	{
+		return NULL;
+	}
+	return tokenized_str[token_positions[token_no]];
 }
 

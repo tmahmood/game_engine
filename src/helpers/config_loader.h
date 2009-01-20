@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  resources.h
+ *       Filename:  config_loader.h
  *
- *    Description:  All the required images are defined here
+ *    Description:  Loads configurations
  *
  *        Version:  1.0
- *        Created:  01/16/2009 03:19:24 PM
+ *        Created:  01/20/2009 01:17:11 PM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -16,22 +16,11 @@
  * =====================================================================================
  */
 
-#ifndef RESOURCES_H_
-#define RESOURCES_H_
-
-#define	DISPLAY_INIT_FAILED 100
-#define	ALL_GOOD 0
-
-#define MISSILE_IMAGE 1003
-
-#define S_EXIT 1000
-
-
-enum Direction
+class Config_loader
 {
-	Left, Right, Up, Down
+	private:
+		void set_config_file(char *);
+		void init_configuraion(); 
+	
+	public:
 };
-
-#endif /* SRC/RESOURCES_H_ */
-
-

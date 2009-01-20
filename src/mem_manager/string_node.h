@@ -47,7 +47,7 @@ class String_node
 
 	bool equals(char *d)
 	{
-		return strcmp(d, data) == 0
+		return strcmp(d, data) == 0;
 	}
 };
 

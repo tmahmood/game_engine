@@ -10,6 +10,7 @@ class String_tokenizer
 		virtual ~String_tokenizer();
 		int split(char*, char);
 		char *get(int);
+		char *get_token(int);
 		void clean_up();
 		int get_token_count();
 

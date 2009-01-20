@@ -85,12 +85,7 @@ char *File_helper::get_last_read_data()
 	{
 		return NULL;
 	}
-	char *rvalue = NULL;
-	if(!string_helper.copy_string(rvalue, last_read_data))
-	{
-		throw (STRING_COPY_EXCEPTION);
-	}
-	return rvalue;
+	return last_read_data;
 }
 
 long File_helper::get_last_file_size()
