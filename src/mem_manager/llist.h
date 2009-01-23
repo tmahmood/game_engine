@@ -73,13 +73,8 @@ class LinkedList
 
 		void remove(int index)
 		{
-			try
+			if(get(index) == NULL)
 			{
-				get(index);
-			}
-			catch (int ex)
-			{
-				printf("%s\n", err_handler.message(ex));
 				return;
 			}
 
@@ -110,9 +105,37 @@ class LinkedList
 
 		void add(T data, int index=-1)
 		{
+			if(index>=0)
+			{
+				update(index, data);
+				return;
+			}
+
 			Node *new_node = init_new_node();
 			new_node->set_data(data);
+			add_new_node( new_node );
+		}
 
+		void add_empty(int index)
+		{
+			T tmp = (T)NULL;
+			add(tmp, index);
+		}
+
+		bool update(int index, T data)
+		{
+			if(get(index)==NULL)
+			{
+				return false;
+			}
+
+			current->set_data(data);
+			return true;
+		}
+
+	private:
+		void add_new_node(Node *new_node)
+		{
 			if(head == NULL)
 			{ 
 				head = new_node;
@@ -133,7 +156,6 @@ class LinkedList
 			count++;
 		}
 
-	private:
 		Node *init_new_node()
 		{	
 			Node *new_node = new Node;
@@ -168,9 +190,8 @@ class LinkedList
 				}
 				next();
 			}
-			throw ILLIGAL_OFFSET;
+			return NULL;
 		}
-
 
 		bool is_valid()
 		{

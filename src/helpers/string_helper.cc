@@ -1,3 +1,4 @@
+#include "../resources.h"
 #include "string_helper.h"
 
 bool String_helper::copy_string(char *&dest, const char *src)
@@ -61,4 +62,15 @@ void String_helper::trim(char *src, char trim_char)
 {
 	trim_right(src, trim_char);
 	trim_left(src, trim_char);
+}
+
+char* String_helper::add_string(char *src1, char *src2)
+{
+	char *tmp = new char[strlen(src1) + strlen(src2) + 1];
+	if(tmp == NULL)
+	{
+		throw MEMORY_ALLOCATION_ERROR;
+	}
+	sprintf(tmp, "%s%s", src1, src2);
+	return tmp;
 }

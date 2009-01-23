@@ -45,24 +45,64 @@ int main (int argc, char *argv[])
 		printf("Argument missing\n");
 		exit(1);
 	}
+
+	try
+	{
+		string_list.add((char*)"hello");
+		char *t = string_list.get_current();
+
+		char *n = String_helper::add_string(t, (char*)" world");
+		string_list.add(n);
+	}
+	catch(int ex)
+	{
+		printf("%d\n", ex);
+	}
+
+	/*
 	init_system(argv[1]);
 	game_loop();
+	*/
 	return EXIT_SUCCESS;
 }
 
 void init_game()
 {
-	char *gpath = string_list.get(1);
-
-	string_list.add(strcat(gpath, "/game.ini"));
-	string_list.add(strcat(gpath, "/missile.png"));
-	
-
-	for(string_list.rewind(); string_list.is_valid() ;string_list.next())
+	try
 	{
-		printf("%s\n", string_list.get_current());
+		char *gpath = string_list.get(1);
+		printf("TEST\n");
+
+		string_list.add(gpath, 1001);
+		printf("%s", string_list.get(1001));
+
+		string_list.add(strcat(gpath, "/game.ini"));
+		printf("%s", string_list.get_current());
+
+		string_list.add(gpath, 1001);
+		string_list.add(strcat(gpath, "/missile.png"));
+		printf("%s", string_list.get(1001));
+
+		printf("TEST\n");
+
+		for(string_list.rewind(); string_list.is_valid() ;string_list.next())
+		{
+			printf("%s\n", string_list.get_current());
+		}
 	}
-	exit(0);
+	catch (int x)
+	{
+		switch(x)
+		{
+			case STRING_COPY_EXCEPTION:
+				printf("Failed to copy string\n");
+				break;
+			default:
+				printf("Unknown Error code\n");
+		}
+		exit(1);
+	}
+	//
 	//iniparser_load();
 	//image_list.add(IMG_Load(mpath), MISSILE_IMAGE);
 

@@ -28,11 +28,34 @@ class String_node
 	String_node *next;
 	String_node *prev;
 	int index;
+	bool empty;
 
-	void set_data(char *d)
+	String_node()
 	{
-		data = new char[strlen(d)];
+		data = NULL;
+		empty = false;
+	}
+
+	void set_data(char *d=NULL)
+	{
+		if(!empty)
+		{
+			delete data;
+		}
+		int len;
+		if(d==NULL)
+		{
+			empty = true;
+			len = 10;
+		}
+		else
+		{
+			len = strlen(d);
+		}
+
+		data = new char[len];
 		strcpy(data, d);
+	
 	}	
 
 	char *get_data()
@@ -42,6 +65,7 @@ class String_node
 
 	~String_node()
 	{
+		printf(">%s\n", data);
 		delete data;
 	}
 
