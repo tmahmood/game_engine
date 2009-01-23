@@ -1,7 +1,6 @@
 #ifndef FILE_HELPER_H_
 
 #define FILE_HELPER_H_
-#include "string_helper.h"
 #include <stdio.h>
 
 class File_helper
@@ -22,7 +21,6 @@ class File_helper
 
 		char *last_read_data;
 		size_t file_size;
-		String_helper string_helper;
 };
 #endif /* SRC/FILE_HELPER_H_ */
 

@@ -17,7 +17,6 @@ class String_tokenizer
 	private:
 		int token_count;
 		char *tokenized_str;
-		String_helper string_helper;
 		int *token_positions;
 
 };

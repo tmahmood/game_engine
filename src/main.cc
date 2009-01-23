@@ -11,17 +11,17 @@
 #include	"mem_manager/string_node.h"
 #include	"helpers/file_helper.h"
 #include 	"helpers/string_tokenizer.h"
+#include 	"ini_parser/iniparser.h"
 
 SDL_DM sdm;
 
 int app_status;
 int system_status = ALL_GOOD;
 
-void init_system();
+void init_system(char*);
 void game_loop();
 bool start_sdl();
 void cleanup();
-void draw_test_image();
 void on_key_down();
 void sdl_event();
 void get_keyboard_event(SDL_Event);
@@ -38,19 +38,45 @@ LinkedList<SDL_Surface*, Image_node>image_list;
 LinkedList<char*, String_node>string_list;
 Vehical vc;
 
-int main ( int argc, char *argv[] )
+int main (int argc, char *argv[])
 {
-	init_system();
+	if(argc < 2)
+	{
+		printf("Argument missing\n");
+		exit(1);
+	}
+	init_system(argv[1]);
 	game_loop();
 	return EXIT_SUCCESS;
 }
 
-void set_human()
+void init_game()
 {
+	char *gpath = string_list.get(1);
 
+	string_list.add(strcat(gpath, "/game.ini"));
+	string_list.add(strcat(gpath, "/missile.png"));
+	
+
+	for(string_list.rewind(); string_list.is_valid() ;string_list.next())
+	{
+		printf("%s\n", string_list.get_current());
+	}
+	exit(0);
+	//iniparser_load();
+	//image_list.add(IMG_Load(mpath), MISSILE_IMAGE);
+
+	vc.set_obj_id(MISSILE_IMAGE);
+	vc.set_life(100);
+	vc.set_size(64, 86);
+	vc.set_damage(10);
+	vc.set_level(0);
+	vc.set_position(100,100);
+	vc.set_speed(2);
+	vc.set_top_speed(20);
 }
 
-void init_system()
+void init_system(char *game_name)
 {	
 	if(!start_sdl())
 	{
@@ -59,26 +85,9 @@ void init_system()
 	atexit(cleanup);
 	clear_screen();
 
-	File_helper fh;
-
-	fh.read_file((char*)"obj_human.txt");
-	string_list.add(fh.get_last_read_data(),100);
-
-	String_tokenizer stk;
-	stk.split(string_list.get(100), '\n');
-
-
-
-	image_list.add(IMG_Load("missile.png"), MISSILE_IMAGE);
-
-	vc.set_obj_id(MISSILE_IMAGE);
-	vc.set_life(100);
-	vc.set_size(image_list.get(MISSILE_IMAGE)->w, image_list.get(MISSILE_IMAGE)->h);
-	vc.set_damage(10);
-	vc.set_level(0);
-	vc.set_position(100,100);
-	vc.set_speed(2);
-	vc.set_top_speed(20);
+	string_list.add(game_name);
+	init_game();
+	
 }
 
 void clear_screen()
@@ -102,21 +111,22 @@ bool start_sdl()
 
 void game_loop()
 {
-	while(app_status!=S_EXIT)
+	try
 	{
-		clear_screen();
-		sdl_event();
-		sdm.draw_image(image_list.get(MISSILE_IMAGE), vc.get_pos_x(),vc.get_pos_y());
-		sdm.redraw();
+		while(app_status!=S_EXIT)
+		{
+			clear_screen();
+			sdl_event();
+			sdm.draw_image(image_list.get(MISSILE_IMAGE), vc.get_pos_x(),vc.get_pos_y());
+			sdm.redraw();
+		}
+	}
+	catch(int x)
+	{
+		printf("Exception cought %d\n", x);
 	}
 }
 
-void draw_test_image()
-{
-	image_list.add(IMG_Load("missile.png"), MISSILE_IMAGE);
-	sdm.draw_image(image_list.get(MISSILE_IMAGE), 438,128);
-	sdm.redraw();
-}
 
 void cleanup()
 {

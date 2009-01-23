@@ -1,4 +1,3 @@
-#include "string_helper.h"
 #include "file_helper.h"
 #include <stdio.h>
 

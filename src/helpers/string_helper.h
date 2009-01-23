@@ -10,11 +10,11 @@
 class String_helper
 {
 	public:
-		bool copy_string(char *&dest, const char *src);
-		void trim(char *, char);
-		void trim_left(char *, char);
-		void trim_right(char *, char);
-		char* search(char *, char, char);
+		static bool copy_string(char *&dest, const char *src);
+		static void trim(char *, char);
+		static void trim_left(char *, char);
+		static void trim_right(char *, char);
+		static char* search(char *, char, char);
 };
 
 #endif /* SRC/STRING_HELPER_H_ */

@@ -171,6 +171,7 @@ class LinkedList
 			throw ILLIGAL_OFFSET;
 		}
 
+
 		bool is_valid()
 		{
 			if(current == NULL)

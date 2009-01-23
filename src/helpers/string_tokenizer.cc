@@ -1,5 +1,5 @@
-#include "string_tokenizer.h"
 #include "string_helper.h"
+#include "string_tokenizer.h"
 #include <string.h>
 
 String_tokenizer::String_tokenizer()
@@ -30,7 +30,7 @@ void String_tokenizer::clean_up()
 int String_tokenizer::split(char *string, char split_by=' ')
 {
 	clean_up();
-	string_helper.copy_string(tokenized_str, string);
+	String_helper::copy_string(tokenized_str, string);
 	int *tpos = new int[strlen(string)];
 
 	token_count = 0;
@@ -82,7 +82,7 @@ char *String_tokenizer::get(int token_no)
 	}
 	char *ret_value ;
 	char *target = &tokenized_str[token_positions[token_no]];
-	string_helper.copy_string(ret_value, target);
+	String_helper::copy_string(ret_value, target);
 	return ret_value;
 }
 
@@ -92,6 +92,6 @@ char *String_tokenizer::get_token(int token_no)
 	{
 		return NULL;
 	}
-	return tokenized_str[token_positions[token_no]];
+	return &tokenized_str[token_positions[token_no]];
 }
 
