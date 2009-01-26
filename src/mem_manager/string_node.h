@@ -1,25 +1,8 @@
-/*
- * =====================================================================================
- *
- *       Filename:  string_node.h
- *
- *    Description:  String node
- *
- *        Version:  1.0
- *        Created:  01/01/2009 01:59:32 PM
- *       Revision:  none
- *       Compiler:  gcc
- *
- *         Author:  Tarin Mahmood (tmn), mrlinux045@gmail.com
- *        Company:  tmnSoft
- *
- * =====================================================================================
- */
 #ifndef STRING_NODE_H_
 
 #define STRING_NODE_H_
 
-char test[][5] = {"123", "234"};
+//char test[][5] = {"123", "234"};
 
 class String_node
 {

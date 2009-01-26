@@ -75,8 +75,6 @@ void Object::set_obj_id(int id)
 	obj_id = id;
 }
 
-
-
 int Object::get_life()
 {
 	return life;
@@ -116,5 +114,4 @@ int Object::get_pos_y()
 {
 	return pos_y;
 }
-
 

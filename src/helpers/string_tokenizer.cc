@@ -30,7 +30,9 @@ void String_tokenizer::clean_up()
 int String_tokenizer::split(char *string, char split_by=' ')
 {
 	clean_up();
+
 	String_helper::copy_string(tokenized_str, string);
+
 	int *tpos = new int[strlen(string)];
 
 	token_count = 0;
@@ -41,8 +43,7 @@ int String_tokenizer::split(char *string, char split_by=' ')
 
 	for(int i = 0; i<=len; i++)	
 	{
-		if(	tokenized_str[i]==split_by || 
-			tokenized_str[i]=='\0')
+		if(tokenized_str[i]==split_by || tokenized_str[i]=='\0')
 		{
 			tokenized_str[i]='\0';
 			if (last_found + 1 == i)

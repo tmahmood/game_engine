@@ -1,0 +1,297 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ALL_GOOD	src/resources.h	25;"	d
+ASCIILINESZ	src/ini_parser/iniparser.c	21;"	d	file:
+Config_loader	src/helpers/config_loader.h	/^class Config_loader$/;"	c
+DICTMINSZ	src/ini_parser/dictionary.c	33;"	d	file:
+DICT_INVALID_KEY	src/ini_parser/dictionary.c	36;"	d	file:
+DISPLAY_INIT_FAILED	src/resources.h	22;"	d
+Direction	src/resources.h	/^enum Direction$/;"	g
+Display	src/sdl/sdl_dm.h	/^		SDL_Surface *Display;$/;"	m	class:SDL_DM
+Down	src/resources.h	/^	Left, Right, Up, Down$/;"	e	enum:Direction
+EVENT_MANAGEMENT_H_	src/sdl/event_management.h	21;"	d
+FILE_HELPER_H_	src/helpers/file_helper.h	3;"	d
+File_helper	src/helpers/file_helper.cc	/^File_helper::File_helper()$/;"	f	class:File_helper
+File_helper	src/helpers/file_helper.h	/^class File_helper$/;"	c
+ILLIGAL_OFFSET	src/mem_manager/llist.h	9;"	d
+INI_INVALID_KEY	src/ini_parser/iniparser.c	22;"	d	file:
+Image_node	src/sdl/image.h	/^class Image_node$/;"	c
+Int_node	src/mem_manager/int_node.h	/^class Int_node$/;"	c
+LINE_COMMENT	src/ini_parser/iniparser.c	/^    LINE_COMMENT,$/;"	e	enum:_line_status_	file:
+LINE_EMPTY	src/ini_parser/iniparser.c	/^    LINE_EMPTY,$/;"	e	enum:_line_status_	file:
+LINE_ERROR	src/ini_parser/iniparser.c	/^    LINE_ERROR,$/;"	e	enum:_line_status_	file:
+LINE_SECTION	src/ini_parser/iniparser.c	/^    LINE_SECTION,$/;"	e	enum:_line_status_	file:
+LINE_UNPROCESSED	src/ini_parser/iniparser.c	/^    LINE_UNPROCESSED,$/;"	e	enum:_line_status_	file:
+LINE_VALUE	src/ini_parser/iniparser.c	/^    LINE_VALUE$/;"	e	enum:_line_status_	file:
+LLIST_H_	src/mem_manager/llist.h	3;"	d
+Left	src/resources.h	/^	Left, Right, Up, Down$/;"	e	enum:Direction
+LinkedList	src/mem_manager/llist.h	/^		LinkedList ( )$/;"	f	class:LinkedList
+LinkedList	src/mem_manager/llist.h	/^class LinkedList$/;"	c
+Linked_list_exception	src/mem_manager/llist.h	/^class Linked_list_exception$/;"	c
+MAP_H_	src/map.h	3;"	d
+MAXVALSZ	src/ini_parser/dictionary.c	30;"	d	file:
+MEMORY_ALLOCATION_ERROR	src/resources.h	24;"	d
+MISSILE_IMAGE	src/resources.h	27;"	d
+Map	src/map.cc	/^Map::Map()$/;"	f	class:Map
+Map	src/map.h	/^class Map$/;"	c
+NOT_INITIALIZED	src/mem_manager/llist.h	8;"	d
+NVALS	src/ini_parser/dictionary.c	366;"	d	file:
+OBJECT_H_	src/objects/object.h	3;"	d
+Object	src/objects/object.h	/^class Object$/;"	c
+POINT_H_	src/point.h	3;"	d
+Point	src/point.h	/^struct Point$/;"	s
+RESOURCES_H_	src/resources.h	20;"	d
+Rectangle	src/sdl/sdl_dm.h	11;"	d
+Right	src/resources.h	/^	Left, Right, Up, Down$/;"	e	enum:Direction
+SDL_DM	src/sdl/sdl_dm.cc	/^SDL_DM::SDL_DM ()$/;"	f	class:SDL_DM
+SDL_DM	src/sdl/sdl_dm.h	/^class SDL_DM$/;"	c
+SDL_DM_H_	src/sdl/sdl_dm.h	3;"	d
+SDL_Helper	src/helpers/sdl_helper.h	/^class SDL_Helper$/;"	c
+STRING_COPY_EXCEPTION	src/resources.h	23;"	d
+STRING_HELPER_H_	src/helpers/string_helper.h	3;"	d
+STRING_NODE_H_	src/mem_manager/string_node.h	3;"	d
+STRING_TOKENIZER_H_	src/helpers/string_tokenizer.h	3;"	d
+S_EXIT	src/resources.h	29;"	d
+String_helper	src/helpers/string_helper.h	/^class String_helper$/;"	c
+String_node	src/mem_manager/string_node.h	/^	String_node()$/;"	f	class:String_node
+String_node	src/mem_manager/string_node.h	/^class String_node$/;"	c
+String_tokenizer	src/helpers/string_tokenizer.cc	/^String_tokenizer::String_tokenizer()$/;"	f	class:String_tokenizer
+String_tokenizer	src/helpers/string_tokenizer.h	/^class String_tokenizer$/;"	c
+Surface	src/sdl/sdl_dm.h	8;"	d
+TIME_H_	src/sdl/timer.h	3;"	d
+Timer	src/sdl/timer.cc	/^Timer::Timer()$/;"	f	class:Timer
+Timer	src/sdl/timer.h	/^class Timer$/;"	c
+Up	src/resources.h	/^	Left, Right, Up, Down$/;"	e	enum:Direction
+Vehical	src/objects/vehical.h	/^class Vehical : public Object$/;"	c
+_DICTIONARY_H_	src/ini_parser/dictionary.h	24;"	d
+_INIPARSER_H_	src/ini_parser/iniparser.h	18;"	d
+_dictionary_	src/ini_parser/dictionary.h	/^typedef struct _dictionary_ {$/;"	s
+_line_status_	src/ini_parser/iniparser.c	/^typedef enum _line_status_ {$/;"	g	file:
+add	src/mem_manager/llist.h	/^		int add(T data, int index=-1)$/;"	f	class:LinkedList
+add_empty	src/mem_manager/llist.h	/^		void add_empty(int index)$/;"	f	class:LinkedList
+add_new_node	src/mem_manager/llist.h	/^		void add_new_node(Node *new_node)$/;"	f	class:LinkedList
+add_string	src/helpers/string_helper.cc	/^void String_helper::add_string(LinkedList<char*,String_node>&list, int target, char *src2)$/;"	f	class:String_helper
+app_status	src/main.cc	/^int app_status;$/;"	v
+background_color	src/sdl/sdl_dm.h	/^		Uint32 background_color;$/;"	m	class:SDL_DM
+clean_up	src/helpers/file_helper.cc	/^void File_helper::clean_up()$/;"	f	class:File_helper
+clean_up	src/helpers/string_tokenizer.cc	/^void String_tokenizer::clean_up()$/;"	f	class:String_tokenizer
+clean_up	src/map.cc	/^void Map::clean_up()$/;"	f	class:Map
+cleanup	src/main.cc	/^void cleanup()$/;"	f
+clear	src/mem_manager/llist.h	/^		void clear()$/;"	f	class:LinkedList
+clear_screen	src/main.cc	/^void clear_screen()$/;"	f
+close_display_manager	src/sdl/sdl_dm.cc	/^void SDL_DM::close_display_manager()$/;"	f	class:SDL_DM
+copy_img_to	src/sdl/sdl_dm.cc	/^bool SDL_DM::copy_img_to( SDL_Surface *image, Rectangle src, Point destp)$/;"	f	class:SDL_DM
+copy_string	src/helpers/string_helper.cc	/^bool String_helper::copy_string(char *&dest, const char *src)$/;"	f	class:String_helper
+count	src/mem_manager/llist.h	/^		int count;$/;"	m	class:LinkedList
+current	src/mem_manager/llist.h	/^		Node *current;$/;"	m	class:LinkedList
+current_dir	src/objects/object.h	/^	Direction current_dir;$/;"	m	class:Object
+current_equals	src/mem_manager/llist.h	/^		bool current_equals(T d)$/;"	f	class:LinkedList
+damage	src/objects/object.h	/^	int damage;$/;"	m	class:Object
+data	src/mem_manager/int_node.h	/^	int data;$/;"	m	class:Int_node
+data	src/mem_manager/string_node.h	/^	char* data;$/;"	m	class:String_node
+data	src/sdl/image.h	/^	SDL_Surface *data;$/;"	m	class:Image_node
+dictionary	src/ini_parser/dictionary.h	/^} dictionary ;$/;"	t	typeref:struct:_dictionary_
+dictionary_del	src/ini_parser/dictionary.c	/^void dictionary_del(dictionary * d)$/;"	f
+dictionary_dump	src/ini_parser/dictionary.c	/^void dictionary_dump(dictionary * d, FILE * out)$/;"	f
+dictionary_get	src/ini_parser/dictionary.c	/^char * dictionary_get(dictionary * d, char * key, char * def)$/;"	f
+dictionary_hash	src/ini_parser/dictionary.c	/^unsigned dictionary_hash(char * key)$/;"	f
+dictionary_new	src/ini_parser/dictionary.c	/^dictionary * dictionary_new(int size)$/;"	f
+dictionary_set	src/ini_parser/dictionary.c	/^int dictionary_set(dictionary * d, char * key, char * val)$/;"	f
+dictionary_unset	src/ini_parser/dictionary.c	/^void dictionary_unset(dictionary * d, char * key)$/;"	f
+display_map_info	src/map.cc	/^void Map::display_map_info()$/;"	f	class:Map
+draw_image	src/sdl/sdl_dm.cc	/^bool SDL_DM::draw_image(SDL_Surface *image, int x, int y)$/;"	f	class:SDL_DM
+empty	src/mem_manager/string_node.h	/^	bool empty;$/;"	m	class:String_node
+end_point	src/map.h	/^		Point end_point;$/;"	m	class:Map
+equals	src/mem_manager/int_node.h	/^	bool equals(int d)$/;"	f	class:Int_node
+equals	src/mem_manager/string_node.h	/^	bool equals(char *d)$/;"	f	class:String_node
+equals	src/sdl/image.h	/^		bool equals(SDL_Surface* tdata)$/;"	f	class:Image_node
+err_handler	src/mem_manager/llist.h	/^		Linked_list_exception err_handler;$/;"	m	class:LinkedList
+file_helper	src/map.h	/^		File_helper file_helper;$/;"	m	class:Map
+file_size	src/helpers/file_helper.h	/^		size_t file_size;$/;"	m	class:File_helper
+fill_rect	src/sdl/sdl_dm.cc	/^void SDL_DM::fill_rect (Uint32 colorkey, SDL_Rect *rect)$/;"	f	class:SDL_DM
+fill_surface	src/sdl/sdl_dm.cc	/^void SDL_DM::fill_surface (Uint32 colorkey)$/;"	f	class:SDL_DM
+find	src/mem_manager/llist.h	/^		bool find(T data)$/;"	f	class:LinkedList
+forward	src/mem_manager/llist.h	/^		void forward()$/;"	f	class:LinkedList
+game_ini	src/main.cc	/^dictionary *game_ini;$/;"	v
+game_loop	src/main.cc	/^void game_loop()$/;"	f
+get	src/helpers/string_tokenizer.cc	/^char *String_tokenizer::get(int token_no)$/;"	f	class:String_tokenizer
+get	src/mem_manager/llist.h	/^		T get(int index)$/;"	f	class:LinkedList
+get_colorkey	src/sdl/sdl_dm.cc	/^Uint32 SDL_DM::get_colorkey(int r, int g, int b)$/;"	f	class:SDL_DM
+get_count	src/mem_manager/llist.h	/^		int get_count()$/;"	f	class:LinkedList
+get_current	src/mem_manager/llist.h	/^		T get_current()$/;"	f	class:LinkedList
+get_current_index	src/mem_manager/llist.h	/^		int get_current_index()$/;"	f	class:LinkedList
+get_current_speed	src/objects/object.cc	/^int Object::get_current_speed()$/;"	f	class:Object
+get_damage	src/objects/object.cc	/^int Object::get_damage()$/;"	f	class:Object
+get_data	src/mem_manager/int_node.h	/^	int get_data()$/;"	f	class:Int_node
+get_data	src/mem_manager/string_node.h	/^	char *get_data()$/;"	f	class:String_node
+get_data	src/sdl/image.h	/^		SDL_Surface* get_data()$/;"	f	class:Image_node
+get_display_format	src/sdl/sdl_dm.cc	/^SDL_PixelFormat* SDL_DM::get_display_format () $/;"	f	class:SDL_DM
+get_file_size	src/helpers/file_helper.cc	/^long File_helper::get_file_size(FILE *fp)$/;"	f	class:File_helper
+get_file_size	src/helpers/file_helper.cc	/^long File_helper::get_file_size(char *fname)$/;"	f	class:File_helper
+get_height	src/objects/object.cc	/^int Object::get_height()$/;"	f	class:Object
+get_key_down	src/main.cc	/^void get_key_down()$/;"	f
+get_keyboard_event	src/main.cc	/^void get_keyboard_event(SDL_Event Event)$/;"	f
+get_last_file_size	src/helpers/file_helper.cc	/^long File_helper::get_last_file_size()$/;"	f	class:File_helper
+get_last_read_data	src/helpers/file_helper.cc	/^char *File_helper::get_last_read_data()$/;"	f	class:File_helper
+get_level	src/objects/object.cc	/^int Object::get_level()$/;"	f	class:Object
+get_life	src/objects/object.cc	/^int Object::get_life()$/;"	f	class:Object
+get_obj_id	src/objects/object.cc	/^int Object::get_obj_id()$/;"	f	class:Object
+get_pixel	src/sdl/sdl_dm.cc	/^Uint8 SDL_DM::get_pixel (int x, int y)$/;"	f	class:SDL_DM
+get_pos_x	src/objects/object.cc	/^int Object::get_pos_x()$/;"	f	class:Object
+get_pos_y	src/objects/object.cc	/^int Object::get_pos_y()$/;"	f	class:Object
+get_ticks	src/sdl/sdl_dm.cc	/^long SDL_DM::get_ticks () $/;"	f	class:SDL_DM
+get_ticks	src/sdl/timer.cc	/^int Timer::get_ticks()$/;"	f	class:Timer
+get_token	src/helpers/string_tokenizer.cc	/^char *String_tokenizer::get_token(int token_no)$/;"	f	class:String_tokenizer
+get_token_count	src/helpers/string_tokenizer.cc	/^int String_tokenizer::get_token_count()$/;"	f	class:String_tokenizer
+get_top_speed	src/objects/vehical.cc	/^int Vehical::get_top_speed()$/;"	f	class:Vehical
+get_width	src/objects/object.cc	/^int Object::get_width()$/;"	f	class:Object
+hash	src/ini_parser/dictionary.h	/^	unsigned	 *	hash ;	\/** List of hash values for keys *\/$/;"	m	struct:_dictionary_
+head	src/mem_manager/llist.h	/^		Node *head;$/;"	m	class:LinkedList
+height	src/objects/object.h	/^	int height;$/;"	m	class:Object
+image_list	src/main.cc	/^LinkedList<SDL_Surface*, Image_node>image_list;$/;"	v
+index	src/mem_manager/int_node.h	/^	int index;$/;"	m	class:Int_node
+index	src/mem_manager/llist.h	/^		int index;$/;"	m	class:LinkedList
+index	src/mem_manager/string_node.h	/^	int index;$/;"	m	class:String_node
+index	src/sdl/image.h	/^		int index;$/;"	m	class:Image_node
+iniparser_dump	src/ini_parser/iniparser.c	/^void iniparser_dump(dictionary * d, FILE * f)$/;"	f
+iniparser_dump_ini	src/ini_parser/iniparser.c	/^void iniparser_dump_ini(dictionary * d, FILE * f)$/;"	f
+iniparser_find_entry	src/ini_parser/iniparser.c	/^int iniparser_find_entry($/;"	f
+iniparser_freedict	src/ini_parser/iniparser.c	/^void iniparser_freedict(dictionary * d)$/;"	f
+iniparser_getboolean	src/ini_parser/iniparser.c	/^int iniparser_getboolean(dictionary * d, const char * key, int notfound)$/;"	f
+iniparser_getdouble	src/ini_parser/iniparser.c	/^double iniparser_getdouble(dictionary * d, char * key, double notfound)$/;"	f
+iniparser_getint	src/ini_parser/iniparser.c	/^int iniparser_getint(dictionary * d, const char * key, int notfound)$/;"	f
+iniparser_getnsec	src/ini_parser/iniparser.c	/^int iniparser_getnsec(dictionary * d)$/;"	f
+iniparser_getsecname	src/ini_parser/iniparser.c	/^char * iniparser_getsecname(dictionary * d, int n)$/;"	f
+iniparser_getstr	src/ini_parser/iniparser.h	41;"	d
+iniparser_getstring	src/ini_parser/iniparser.c	/^char * iniparser_getstring(dictionary * d, const char * key, char * def)$/;"	f
+iniparser_line	src/ini_parser/iniparser.c	/^static line_status iniparser_line($/;"	f	file:
+iniparser_load	src/ini_parser/iniparser.c	/^dictionary * iniparser_load(const char * ininame)$/;"	f
+iniparser_set	src/ini_parser/iniparser.c	/^int iniparser_set(dictionary * ini, char * entry, char * val)$/;"	f
+iniparser_setstr	src/ini_parser/iniparser.h	42;"	d
+iniparser_unset	src/ini_parser/iniparser.c	/^void iniparser_unset(dictionary * ini, char * entry)$/;"	f
+init_dm	src/sdl/sdl_dm.cc	/^bool SDL_DM::init_dm ()$/;"	f	class:SDL_DM
+init_game	src/main.cc	/^void init_game()$/;"	f
+init_new_node	src/mem_manager/llist.h	/^		Node *init_new_node()$/;"	f	class:LinkedList
+init_system	src/main.cc	/^void init_system(char *game_name)$/;"	f
+initialized	src/sdl/sdl_dm.h	/^		bool initialized;$/;"	m	class:SDL_DM
+is_initialized	src/sdl/sdl_dm.cc	/^bool SDL_DM::is_initialized()$/;"	f	class:SDL_DM
+is_paused	src/sdl/timer.cc	/^bool Timer::is_paused()$/;"	f	class:Timer
+is_started	src/sdl/timer.cc	/^bool Timer::is_started()$/;"	f	class:Timer
+is_valid	src/mem_manager/llist.h	/^		bool is_valid()$/;"	f	class:LinkedList
+is_valid_position	src/map.cc	/^bool Map::is_valid_position(Point p)$/;"	f	class:Map
+key	src/ini_parser/dictionary.h	/^	char 		**  key ;	\/** List of string keys *\/$/;"	m	struct:_dictionary_
+last	src/mem_manager/llist.h	/^		Node *last;$/;"	m	class:LinkedList
+last_read_data	src/helpers/file_helper.h	/^		char *last_read_data;$/;"	m	class:File_helper
+level	src/objects/object.h	/^	int level;$/;"	m	class:Object
+life	src/objects/object.h	/^	int life;$/;"	m	class:Object
+line_status	src/ini_parser/iniparser.c	/^} line_status ;$/;"	t	typeref:enum:_line_status_	file:
+load_image	src/sdl/sdl_dm.h	9;"	d
+load_map	src/map.cc	/^bool Map::load_map(char *map_file)$/;"	f	class:Map
+main	src/ini_parser/dictionary.c	/^int main(int argc, char *argv[])$/;"	f
+main	src/main.cc	/^int main (int argc, char *argv[])$/;"	f
+map	src/map.h	/^		char *map;$/;"	m	class:Map
+map_height	src/map.h	/^		int map_height;$/;"	m	class:Map
+map_title	src/map.h	/^		char *map_title;$/;"	m	class:Map
+map_width	src/map.h	/^		int map_width;$/;"	m	class:Map
+mem_double	src/ini_parser/dictionary.c	/^static void * mem_double(void * ptr, int size)$/;"	f	file:
+message	src/mem_manager/llist.h	/^	virtual const char* message(int code) const throw()$/;"	f	class:Linked_list_exception
+move	src/objects/object.cc	/^void Object::move(Direction dir)$/;"	f	class:Object
+move	src/objects/vehical.cc	/^void Vehical::move(Direction dir)$/;"	f	class:Vehical
+move_down	src/main.cc	/^void move_down()$/;"	f
+move_int	src/objects/object.cc	/^void Object::move_int(Direction dir)$/;"	f	class:Object
+move_left	src/main.cc	/^void move_left()$/;"	f
+move_right	src/main.cc	/^void move_right()$/;"	f
+move_up	src/main.cc	/^void move_up()$/;"	f
+n	src/ini_parser/dictionary.h	/^	int				n ;		\/** Number of entries in dictionary *\/$/;"	m	struct:_dictionary_
+next	src/mem_manager/int_node.h	/^	Int_node *next;$/;"	m	class:Int_node
+next	src/mem_manager/llist.h	/^		bool next()$/;"	f	class:LinkedList
+next	src/mem_manager/string_node.h	/^	String_node *next;$/;"	m	class:String_node
+next	src/sdl/image.h	/^		Image_node *next;$/;"	m	class:Image_node
+obj_id	src/objects/object.h	/^	int obj_id;$/;"	m	class:Object
+on_key_down	src/sdl/event_management.cc	/^void on_key_down()$/;"	f
+pause	src/sdl/timer.cc	/^void Timer::pause()$/;"	f	class:Timer
+paused	src/sdl/timer.h	/^		bool paused;$/;"	m	class:Timer
+paused_ticks	src/sdl/timer.h	/^		int paused_ticks;$/;"	m	class:Timer
+pos_x	src/objects/object.h	/^	int pos_x;$/;"	m	class:Object
+pos_y	src/objects/object.h	/^	int pos_y;$/;"	m	class:Object
+prev	src/mem_manager/int_node.h	/^	Int_node *prev;$/;"	m	class:Int_node
+prev	src/mem_manager/string_node.h	/^	String_node *prev;$/;"	m	class:String_node
+prev	src/sdl/image.h	/^		Image_node *prev;$/;"	m	class:Image_node
+previous	src/mem_manager/llist.h	/^		bool previous()$/;"	f	class:LinkedList
+put_pixel	src/sdl/sdl_dm.cc	/^void SDL_DM::put_pixel(int x, int y, Uint32 pixel)$/;"	f	class:SDL_DM
+read_file	src/helpers/file_helper.cc	/^bool File_helper::read_file(char *fname=NULL)$/;"	f	class:File_helper
+redraw	src/sdl/sdl_dm.cc	/^void SDL_DM::redraw ()$/;"	f	class:SDL_DM
+remove	src/mem_manager/llist.h	/^		void remove(int index)$/;"	f	class:LinkedList
+reset	src/mem_manager/llist.h	/^		void reset()$/;"	f	class:LinkedList
+rewind	src/mem_manager/llist.h	/^		void rewind()$/;"	f	class:LinkedList
+scr_height	src/sdl/sdl_dm.h	/^		int scr_height;$/;"	m	class:SDL_DM
+scr_width	src/sdl/sdl_dm.h	/^		int scr_width;$/;"	m	class:SDL_DM
+sdl_event	src/main.cc	/^void sdl_event()$/;"	f
+sdl_event	src/sdl/event_management.cc	/^void sdl_event()$/;"	f
+sdm	src/main.cc	/^SDL_DM sdm;$/;"	v
+search	src/helpers/string_helper.cc	/^char *String_helper::search(char *src, char search_key, char direction = 'f')$/;"	f	class:String_helper
+set_damage	src/objects/object.cc	/^void Object::set_damage(int val)$/;"	f	class:Object
+set_data	src/mem_manager/int_node.h	/^	void set_data(int d)$/;"	f	class:Int_node
+set_data	src/mem_manager/string_node.h	/^	void set_data(char *d=NULL)$/;"	f	class:String_node
+set_data	src/sdl/image.h	/^		void set_data(SDL_Surface *d)$/;"	f	class:Image_node
+set_display_color_bit	src/sdl/sdl_dm.cc	/^void SDL_DM::set_display_color_bit(int bit)$/;"	f	class:SDL_DM
+set_display_flags	src/sdl/sdl_dm.cc	/^void SDL_DM::set_display_flags(int flag)$/;"	f	class:SDL_DM
+set_level	src/objects/object.cc	/^void Object::set_level(int val)$/;"	f	class:Object
+set_life	src/objects/object.cc	/^void Object::set_life(int val)$/;"	f	class:Object
+set_obj_id	src/objects/object.cc	/^void Object::set_obj_id(int id)$/;"	f	class:Object
+set_position	src/objects/object.cc	/^void Object::set_position(int x, int y)$/;"	f	class:Object
+set_screen_size	src/sdl/sdl_dm.cc	/^void SDL_DM::set_screen_size(int sw, int sh)$/;"	f	class:SDL_DM
+set_size	src/objects/object.cc	/^void Object::set_size(int w,int h)$/;"	f	class:Object
+set_speed	src/objects/object.cc	/^void Object::set_speed(int spd)$/;"	f	class:Object
+set_top_speed	src/objects/vehical.cc	/^void Vehical::set_top_speed(int ts)$/;"	f	class:Vehical
+size	src/ini_parser/dictionary.h	/^	int				size ;	\/** Storage size *\/$/;"	m	struct:_dictionary_
+speed	src/objects/object.h	/^	int speed;$/;"	m	class:Object
+split	src/helpers/string_tokenizer.cc	/^int String_tokenizer::split(char *string, char split_by=' ')$/;"	f	class:String_tokenizer
+start	src/sdl/timer.cc	/^void Timer::start()$/;"	f	class:Timer
+start_point	src/map.h	/^		Point start_point;$/;"	m	class:Map
+start_sdl	src/main.cc	/^bool start_sdl()$/;"	f
+start_test	src/tester.cc	/^int start_test (int argc, char const* argv[])$/;"	f
+start_ticks	src/sdl/timer.h	/^		int start_ticks;$/;"	m	class:Timer
+started	src/sdl/timer.h	/^		bool started;$/;"	m	class:Timer
+stop	src/sdl/timer.cc	/^void Timer::stop()$/;"	f	class:Timer
+string_helper	src/map.h	/^		String_helper string_helper;$/;"	m	class:Map
+string_list	src/main.cc	/^LinkedList<char*, String_node>string_list;$/;"	v
+strlwc	src/ini_parser/iniparser.c	/^static char * strlwc(const char * s)$/;"	f	file:
+strstrip	src/ini_parser/iniparser.c	/^static char * strstrip(char * s)$/;"	f	file:
+system_status	src/main.cc	/^int system_status = ALL_GOOD;$/;"	v
+test_SDL	src/tester.cc	/^int test_SDL()$/;"	f
+test_file_helper	src/tester.cc	/^void test_file_helper()$/;"	f
+test_map	src/tester.cc	/^void test_map()$/;"	f
+test_string_trimmer	src/tester.cc	/^void test_string_trimmer()$/;"	f
+test_tokenizer	src/tester.cc	/^void test_tokenizer(char *test, char split_by=' ')$/;"	f
+test_tokenizer_w_data	src/tester.cc	/^void test_tokenizer_w_data()$/;"	f
+token_count	src/helpers/string_tokenizer.h	/^		int token_count;$/;"	m	class:String_tokenizer
+token_positions	src/helpers/string_tokenizer.h	/^		int *token_positions;$/;"	m	class:String_tokenizer
+tokenized_str	src/helpers/string_tokenizer.h	/^		char *tokenized_str;$/;"	m	class:String_tokenizer
+top_speed	src/objects/vehical.h	/^		int top_speed;$/;"	m	class:Vehical
+trim	src/helpers/string_helper.cc	/^void String_helper::trim(char *src, char trim_char)$/;"	f	class:String_helper
+trim_left	src/helpers/string_helper.cc	/^void String_helper::trim_left(char *src, char trim_char)$/;"	f	class:String_helper
+trim_right	src/helpers/string_helper.cc	/^void String_helper::trim_right(char *string, char trim_char)$/;"	f	class:String_helper
+unload_image	src/sdl/sdl_dm.h	10;"	d
+unpause	src/sdl/timer.cc	/^void Timer::unpause()$/;"	f	class:Timer
+update	src/mem_manager/llist.h	/^		bool update(int index, T data)$/;"	f	class:LinkedList
+val	src/ini_parser/dictionary.h	/^	char 		**	val ;	\/** List of string values *\/$/;"	m	struct:_dictionary_
+vc	src/main.cc	/^Vehical vc;$/;"	v
+wbit	src/sdl/sdl_dm.h	/^		int wbit;$/;"	m	class:SDL_DM
+wflag	src/sdl/sdl_dm.h	/^		int wflag;$/;"	m	class:SDL_DM
+width	src/objects/object.h	/^	int width;$/;"	m	class:Object
+x	src/point.h	/^	int x;$/;"	m	struct:Point
+xstrdup	src/ini_parser/dictionary.c	/^static char * xstrdup(char * s)$/;"	f	file:
+y	src/point.h	/^	int y;$/;"	m	struct:Point
+~File_helper	src/helpers/file_helper.cc	/^File_helper::~File_helper()$/;"	f	class:File_helper
+~Image_node	src/sdl/image.h	/^		~Image_node()$/;"	f	class:Image_node
+~Int_node	src/mem_manager/int_node.h	/^	~Int_node()$/;"	f	class:Int_node
+~LinkedList	src/mem_manager/llist.h	/^		virtual ~LinkedList()$/;"	f	class:LinkedList
+~Map	src/map.cc	/^Map::~Map()$/;"	f	class:Map
+~SDL_DM	src/sdl/sdl_dm.cc	/^SDL_DM::~SDL_DM()$/;"	f	class:SDL_DM
+~String_node	src/mem_manager/string_node.h	/^	~String_node()$/;"	f	class:String_node
+~String_tokenizer	src/helpers/string_tokenizer.cc	/^String_tokenizer::~String_tokenizer()$/;"	f	class:String_tokenizer

@@ -12,12 +12,18 @@
 #include	"helpers/file_helper.h"
 #include 	"helpers/string_tokenizer.h"
 #include 	"ini_parser/iniparser.h"
+#include 	"ini_parser/dictionary.h"
 
 SDL_DM sdm;
 
 int app_status;
 int system_status = ALL_GOOD;
+dictionary *game_ini;
 
+int actor_count;
+int name_index;
+
+void init_game();
 void init_system(char*);
 void game_loop();
 bool start_sdl();
@@ -46,74 +52,10 @@ int main (int argc, char *argv[])
 		exit(1);
 	}
 
-	try
-	{
-		string_list.add((char*)"hello");
-		char *t = string_list.get_current();
-
-		char *n = String_helper::add_string(t, (char*)" world");
-		string_list.add(n);
-	}
-	catch(int ex)
-	{
-		printf("%d\n", ex);
-	}
-
-	/*
 	init_system(argv[1]);
-	game_loop();
-	*/
+	//game_loop();
+
 	return EXIT_SUCCESS;
-}
-
-void init_game()
-{
-	try
-	{
-		char *gpath = string_list.get(1);
-		printf("TEST\n");
-
-		string_list.add(gpath, 1001);
-		printf("%s", string_list.get(1001));
-
-		string_list.add(strcat(gpath, "/game.ini"));
-		printf("%s", string_list.get_current());
-
-		string_list.add(gpath, 1001);
-		string_list.add(strcat(gpath, "/missile.png"));
-		printf("%s", string_list.get(1001));
-
-		printf("TEST\n");
-
-		for(string_list.rewind(); string_list.is_valid() ;string_list.next())
-		{
-			printf("%s\n", string_list.get_current());
-		}
-	}
-	catch (int x)
-	{
-		switch(x)
-		{
-			case STRING_COPY_EXCEPTION:
-				printf("Failed to copy string\n");
-				break;
-			default:
-				printf("Unknown Error code\n");
-		}
-		exit(1);
-	}
-	//
-	//iniparser_load();
-	//image_list.add(IMG_Load(mpath), MISSILE_IMAGE);
-
-	vc.set_obj_id(MISSILE_IMAGE);
-	vc.set_life(100);
-	vc.set_size(64, 86);
-	vc.set_damage(10);
-	vc.set_level(0);
-	vc.set_position(100,100);
-	vc.set_speed(2);
-	vc.set_top_speed(20);
 }
 
 void init_system(char *game_name)
@@ -125,9 +67,46 @@ void init_system(char *game_name)
 	atexit(cleanup);
 	clear_screen();
 
+	String_helper::trim_right(game_name, '/');
+
 	string_list.add(game_name);
 	init_game();
 	
+}
+
+void init_game()
+{
+	char *gpath = string_list.get(1);
+
+	string_list.add(gpath, 1001);
+	String_helper::add_string(string_list, 1001, (char*)"/game.ini");
+
+	game_ini =  iniparser_load(string_list.get(1001));
+
+	char *name = iniparser_getstring(game_ini, "game:name", "game");
+	name_index = string_list.add(name);
+	delete name;
+
+	actor_count = iniparser_getint("game:actor_count", 1);
+
+	for( int i = 0; i < actor_count; i += 1)
+	{
+							
+	}
+	
+
+	/*
+	   image_list.add(IMG_Load(mpath), MISSILE_IMAGE);
+
+	   vc.set_obj_id(MISSILE_IMAGE);
+	   vc.set_life(100);
+	   vc.set_size(64, 86);
+	   vc.set_damage(10);
+	   vc.set_level(0);
+	   vc.set_position(100,100);
+	   vc.set_speed(2);
+	   vc.set_top_speed(20);
+	   */
 }
 
 void clear_screen()

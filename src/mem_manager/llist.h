@@ -103,17 +103,19 @@ class LinkedList
 			count--;
 		}
 
-		void add(T data, int index=-1)
+		int add(T data, int index=-1)
 		{
-			if(index>=0)
-			{
-				update(index, data);
-				return;
-			}
 
 			Node *new_node = init_new_node();
 			new_node->set_data(data);
 			add_new_node( new_node );
+
+			if(index>=0)
+			{
+				new_node->index = index;
+			}
+
+			return new_node->index;
 		}
 
 		void add_empty(int index)

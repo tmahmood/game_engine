@@ -19,9 +19,7 @@ bool String_helper::copy_string(char *&dest, const char *src)
 		return false;
 	}
 }
-
-char *String_helper::search(char *src, char search_key,
-				 char direction = 'f')
+char *String_helper::search(char *src, char search_key, char direction = 'f')
 {
 	if(direction == 'f')
 	{
@@ -64,13 +62,14 @@ void String_helper::trim(char *src, char trim_char)
 	trim_left(src, trim_char);
 }
 
-char* String_helper::add_string(char *src1, char *src2)
+void String_helper::add_string(LinkedList<char*,String_node>&list, int target, char *src2)
 {
-	char *tmp = new char[strlen(src1) + strlen(src2) + 1];
+	char *tmp = new char[strlen(list.get(target)) + strlen(src2) + 1];
 	if(tmp == NULL)
 	{
 		throw MEMORY_ALLOCATION_ERROR;
 	}
-	sprintf(tmp, "%s%s", src1, src2);
-	return tmp;
+	sprintf(tmp, "%s%s", list.get(target), src2);
+	list.update(target, tmp);
+	delete tmp;
 }

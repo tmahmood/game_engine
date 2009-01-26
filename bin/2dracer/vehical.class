@@ -1,0 +1,2 @@
+top_speed = 100
+speed>=top_speed?true:false
