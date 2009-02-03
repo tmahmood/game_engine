@@ -1,10 +1,3 @@
-#include "helpers/file_helper.h"
-#include "helpers/string_tokenizer.h"
-#include "helpers/string_helper.h"
-#include "sdl/sdl_dm.h"
-#include "map.h"
-
-
 int test_SDL()
 {
 	SDL_DM sdm;

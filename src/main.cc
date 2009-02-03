@@ -4,15 +4,18 @@
 
 #include 	"resources.h"
 
-#include	"mem_manager/llist.h"
 #include	"sdl/sdl_dm.h"
-#include	"sdl/image.h"
 #include	"objects/vehical.h"
-#include	"mem_manager/string_node.h"
 #include	"helpers/file_helper.h"
 #include 	"helpers/string_tokenizer.h"
 #include 	"ini_parser/iniparser.h"
 #include 	"ini_parser/dictionary.h"
+
+
+#include	"mem_manager/llist.h"
+#include	"mem_manager/image_node.h"
+#include	"mem_manager/string_node.h"
+#include	"mem_manager/pyobjs.h"
 
 SDL_DM sdm;
 
@@ -42,6 +45,7 @@ void set_human();
 
 LinkedList<SDL_Surface*, Image_node>image_list;
 LinkedList<char*, String_node>string_list;
+LinkedList<PyObject*, PyObject_node>pyobj_list;
 Vehical vc;
 
 int main (int argc, char *argv[])
@@ -83,17 +87,16 @@ void init_game()
 
 	game_ini =  iniparser_load(string_list.get(1001));
 
-	char *name = iniparser_getstring(game_ini, "game:name", "game");
+	char *name = iniparser_getstring(game_ini, (char*)"game:name", (char*)"game");
 	name_index = string_list.add(name);
 	delete name;
 
-	actor_count = iniparser_getint("game:actor_count", 1);
+	actor_count = iniparser_getint(game_ini, "game:actor_count", 1);
 
 	for( int i = 0; i < actor_count; i += 1)
 	{
 							
 	}
-	
 
 	/*
 	   image_list.add(IMG_Load(mpath), MISSILE_IMAGE);

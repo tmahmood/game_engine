@@ -2,10 +2,11 @@ CC=g++
 CFLAGS=-c -Wall -g
 LDFLAGS=-g -Wall
 SDLFLAG=`sdl-config --cflags --libs` -lSDL_image
+PYFLAGS=-l python2.5
 EXECUTABLE=bin/game_engine
 
-game_engine: main string_helper string_tokenizer file_helper sdl object vehical timer ini_parser dictionary
-	g++ obj/main.o obj/string_helper.o obj/string_tokenizer.o obj/file_helper.o obj/sdl_dm.o obj/object.o obj/vehical.o obj/timer.o obj/ini_parser.o obj/dictionary.o $(SDLFLAG) $(LDFLAGS) -o$(EXECUTABLE)
+game_engine: main string_helper string_tokenizer file_helper sdl object vehical timer ini_parser dictionary pyengine
+	g++ obj/main.o obj/string_helper.o obj/string_tokenizer.o obj/file_helper.o obj/sdl_dm.o obj/object.o obj/vehical.o obj/timer.o obj/ini_parser.o obj/dictionary.o obj/pyengine.o $(SDLFLAG) $(LDFLAGS) $(PYFLAGS) -o$(EXECUTABLE)
 
 main:
 	g++ $(CFLAGS) -c src/main.cc -oobj/main.o
@@ -36,6 +37,9 @@ ini_parser:
 
 dictionary:
 	g++ $(CFLAGS) $(SDLFLAG) -c src/ini_parser/dictionary.c -o obj/dictionary.o
+
+pyengine:
+	g++ $(CFLAGS) $(PYFLAGS) -c src/pyengine/pyengine.cc -o obj/pyengine.o
 
 clean:
 	rm obj/*.o
