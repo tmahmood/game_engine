@@ -177,14 +177,14 @@ bool SDL_DM::draw_image(SDL_Surface *image, int x, int y)
 
 }
 
-bool SDL_DM::copy_img_to( SDL_Surface *image, Rectangle src, Point destp)
+bool SDL_DM::copy_img_to( SDL_Surface *image, SDL_Rect src, Point destp)
 {
 	if (!image) 
 	{		
 		return false;
 	} 
 
-	Rectangle dest;
+	SDL_Rect dest;
 	dest.x = destp.x;
 	dest.y = destp.y;
 	dest.w = image->w;
@@ -207,6 +207,17 @@ void SDL_DM::fill_surface (Uint32 colorkey)
 void SDL_DM::fill_rect (Uint32 colorkey, SDL_Rect *rect)
 {
 	SDL_FillRect(Display, rect, colorkey);
+}
+
+void SDL_DM::fill_rect (Uint32 colorkey, Rectangle *rect)
+{
+	SDL_Rect sr;
+	sr.x = rect->x;
+	sr.y = rect->y;
+	sr.w = rect->width;
+	sr.h = rect->height;
+
+	SDL_FillRect(Display, &sr, colorkey);
 }
 
 Uint32 SDL_DM::get_colorkey(int r, int g, int b)

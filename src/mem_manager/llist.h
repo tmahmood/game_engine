@@ -118,6 +118,14 @@ class LinkedList
 			return new_node->index;
 		}
 
+		int move(T data, int index=-1)
+		{
+			int indx = add(data, index);
+			delete data;
+			return indx;
+		}
+
+
 		void add_empty(int index)
 		{
 			T tmp = (T)NULL;

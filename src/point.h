@@ -2,11 +2,6 @@
 
 #define POINT_H_
 
-struct Point
-{
-	int x;
-	int y;
-};
 
 #endif /* POINT_H_ */
 

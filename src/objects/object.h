@@ -1,5 +1,4 @@
 #ifndef OBJECT_H_
-
 #define OBJECT_H_
 #include	"../resources.h"
 
@@ -14,6 +13,7 @@ class Object
 	virtual void set_obj_id(int);
 	virtual void set_position(int, int);
 	virtual void set_speed(int);
+	virtual void set_direction(Direction);
 
 	int get_life();
 	int get_width();
@@ -24,8 +24,10 @@ class Object
 	int get_pos_x();
 	int get_pos_y();
 	int get_current_speed();
+	Direction get_direction();
 
-	virtual void move(Direction);
+	virtual void move(Direction dir, int amount=0);
+	Rectangle get_rectangle ();
 
 	protected:
 	int obj_id;

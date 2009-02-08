@@ -2,8 +2,17 @@
 #include	"object.h"
 #include 	<stdio.h>
 
-void Object::move(Direction dir)
+void Object::move(Direction dir, int amount)
 {
+	if(amount !=0)
+	{
+		int old_speed = speed;
+		speed = amount;
+		move_int(dir);		
+		speed = old_speed;
+		return;
+	}
+	
 	move_int(dir);		
 }
 
@@ -21,6 +30,16 @@ void Object::set_speed(int spd)
 int Object::get_current_speed()
 {
 	return speed;
+}
+
+Rectangle Object::get_rectangle()
+{
+	Rectangle t;
+	t.x = pos_x;
+	t.y = pos_y;
+	t.width= width;
+	t.height= height;
+	return t;
 }
 
 void Object::move_int(Direction dir)
@@ -73,6 +92,17 @@ void Object::set_level(int val)
 void Object::set_obj_id(int id)
 {
 	obj_id = id;
+}
+
+void Object::set_direction(Direction dir)
+{
+	speed = 0;
+	current_dir = dir;
+}
+
+Direction Object::get_direction()
+{
+	return current_dir;
 }
 
 int Object::get_life()
